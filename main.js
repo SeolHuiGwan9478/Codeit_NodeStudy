@@ -1,4 +1,3 @@
-const math = require('./math-tool');
+const os = require('os');
 
-console.log(math.pi);
-console.log(math.add(1,7));
+console.log(os.cpus());
