@@ -1,3 +1,4 @@
-let math = require('./math-tool.js');
+const math = require('./math-tool');
 
-console.log(math.add(1,2));
+console.log(math.pi);
+console.log(math.add(1,7));
