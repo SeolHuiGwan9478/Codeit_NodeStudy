@@ -1,18 +1,9 @@
-const fs = require('fs');
+const EventEmitter = require('events');
+const myEmitter = new EventEmitter();
 
-//동기 실행
-console.log('Start');
+const obj = {type: 'text', data: 'Hello Seolhuigwan', date: '2023-04-01'};
+myEmitter.on('test', (info) => {
+    console.log(info);
+});
 
-let content = fs.readFileSync('./new', 'utf8');
-console.log(content);
-
-console.log('Finish');
-
-//비동기 실행
-console.log('Start');
-
-fs.readFile('./new', 'utf8', (error, data) => {
-    console.log(data);
-})
-
-console.log('Finish');
+myEmitter.emit('test', obj);
