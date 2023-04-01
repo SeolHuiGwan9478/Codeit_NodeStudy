@@ -1,5 +1,18 @@
-const cowsay = require('cowsay');
+const fs = require('fs');
 
-console.log(cowsay.say({
-    text : "I love javascript",
-}));
+//동기 실행
+console.log('Start');
+
+let content = fs.readFileSync('./new', 'utf8');
+console.log(content);
+
+console.log('Finish');
+
+//비동기 실행
+console.log('Start');
+
+fs.readFile('./new', 'utf8', (error, data) => {
+    console.log(data);
+})
+
+console.log('Finish');
